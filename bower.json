@@ -1,0 +1,17 @@
+{
+  "name": "websockets",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mattfili/websockets",
+  "authors": [
+    "Matt Fili <matthewjosephfili@gmail.com>"
+  ],
+  "main": "index.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
