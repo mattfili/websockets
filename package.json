@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/mattfili/websockets/issues"
   },
-  "homepage": "https://github.com/mattfili/websockets#readme"
+  "homepage": "https://github.com/mattfili/websockets#readme",
+  "dependencies": {
+    "babel": "^5.8.21",
+    "express": "^4.13.3"
+  }
 }
