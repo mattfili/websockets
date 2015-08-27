@@ -6,10 +6,52 @@
   </head>
   <body>
 	<h1>Websockets</h1>
-
+	<form>
+		<input name="name" placeholder="Matt">
+		<input name="text" placeholder="Hey bud">
+		<input type="submit">
+	</form>
+	<ul>
+		
+	</ul>
 	<script src="/lib/socket.io-client/socket.io.js"></script>
 	<script>
+		var form = document.querySelector('form');
+		var nameInput = document.querySelector('input[name="name"]');
+		var textInput = document.querySelector('input[name="text"]');
+		var ul = document.querySelector('ul');
+
+		form.addEventListener('submit', function () {
+			var name = nameInput.value;
+			var text = textInput.value;
+
+			socket.emit('chatMessage', {name: name, text: text});
+			input.value = '';
+			event.preventDefault();
+		});
+
 		var socket = io();
+
+		socket.on('connect', function (obj) {
+			console.log(socket.id);
+		});
+
+		socket.on('chatMessage', function (msg) {
+			console.log('Message Received: ', msg);
+
+			var li = genLIElement(msg);
+			ul.appendChild(li);
+
+			var text = document.createTextNode(message.toEveryone.name + ': ' + message.toEveryone.text)
+
+		});
+
+		function genLIElement(message) {
+			var li = document.createElement('li');
+			var text = document.createTextNode(message.toEveryone.text);
+			li.appendChild(text);
+			return li;
+		}
 
 	</script>
   </body>
